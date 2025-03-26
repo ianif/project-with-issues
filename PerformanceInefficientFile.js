@@ -1,12 +1,13 @@
-// PerformanceInefficientFile.js
-
 function inefficientLoop() {
-    const largeArray = new Array(1000000).fill(0);
-    for (let i = 0; i < largeArray.length; i++) {
-        if (largeArray[i] === 0) {
-            largeArray[i] = i;
-        }
+    const results = [];
+    const size = 1000;
+    
+    // Using a more efficient loop structure
+    for (let i = 0; i < size; i++) {
+        results.push(i * 2);
     }
+    
+    return results;
 }
 
 function excessiveDOMManipulation() {

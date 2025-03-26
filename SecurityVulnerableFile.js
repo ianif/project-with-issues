@@ -1,10 +1,20 @@
 // SecurityVulnerableFile.js
+// SecurityVulnerableFile.js
 
 // This file contains multiple security vulnerabilities
 
-// 1. Using eval() can lead to code injection attacks
 function executeUserInput(userInput) {
-    eval(userInput); // Dangerous: executes arbitrary code
+    // Sanitize input and use safer alternatives
+    if (typeof userInput !== 'string') {
+        throw new Error('Invalid input type');
+    }
+    
+    // Use safer alternatives instead of eval
+    try {
+        return JSON.parse(userInput);
+    } catch (error) {
+        return null;
+    }
 }
 
 // 2. Insecure handling of sensitive data
